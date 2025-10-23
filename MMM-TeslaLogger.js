@@ -1440,6 +1440,20 @@ Module.register("MMM-TeslaLogger", {
 			symbol = document.createElement("i");
 			symbol.className = "align-left fa fa-fw fa-battery-three-quarters";
 
+			// --- NEW: Logic for battery classes ---
+            const batteryLevel = self.TeslaJSON.Battery_level;
+            symbol.classList.remove("battery-critical", "battery-low", "battery-medium", "battery-high"); // Limpiar clases anteriores
+            if (batteryLevel < 20) {
+                symbol.classList.add("battery-critical");
+            } else if (batteryLevel < 40) {
+                symbol.classList.add("battery-low");
+            } else if (batteryLevel < 80) {
+                symbol.classList.add("battery-medium");
+            } else {
+                symbol.classList.add("battery-high");
+            }
+            // --- END NEW ---
+			
 			symbolCell.appendChild(symbol);
 
 
@@ -1612,6 +1626,18 @@ Module.register("MMM-TeslaLogger", {
 
 			symbol = document.createElement("i");
 			symbol.className = "align-left fa fa-fw fa-thermometer-half";
+			
+			// --- NEW: Logic for temperature classes ---
+            const insideTemp = self.TeslaJSON.Inside_temperature_Calc;
+            symbol.classList.remove("temp-cold", "temp-normal", "temp-hot"); 
+            if (insideTemp < 15) { // Ajusta este umbral si necesario (ej. para Farenheit)
+                symbol.classList.add("temp-cold");
+            } else if (insideTemp < 28) { // Ajusta este umbral si necesario
+                symbol.classList.add("temp-normal");
+            } else {
+                symbol.classList.add("temp-hot");
+            }
+            // --- END NEW ---
 
 			symbolCell.appendChild(symbol);
 
@@ -2097,3 +2123,4 @@ Module.register("MMM-TeslaLogger", {
 	// ------------------------------------------------------------------------
 
 });
+
