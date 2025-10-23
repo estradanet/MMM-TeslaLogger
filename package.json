@@ -2,10 +2,10 @@
   "name": "MMM-TeslaLogger",
   "version": "0.0.1",
   "description": "show data from the Teslalogger subscribed to via MQTT",
-  "author": "Josef Spitzlberger",
+  "author": "Josef Spitzlberger, fork by Luis Estrada for personal use",
   "repository": {
     "type": "git",
-    "url": "git://github.com/spitzlbergerj/MMM-TeslaLogger"
+    "url": "git://github.com/estradanet/MMM-TeslaLogger"
   },
   "license": "MIT",
   "dependencies": {
