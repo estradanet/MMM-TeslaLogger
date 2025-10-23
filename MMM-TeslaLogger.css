@@ -9,3 +9,12 @@
 td {
     padding-right: 5px;
 }
+.MMM-TeslaLogger .battery-critical { color: red !important; }
+.MMM-TeslaLogger .battery-low { color: orange !important; }
+.MMM-TeslaLogger .battery-medium { color: yellowgreen !important; }
+.MMM-TeslaLogger .battery-high { color: limegreen !important; }
+
+
+.MMM-TeslaLogger .temp-cold { color: lightblue !important; }
+.MMM-TeslaLogger .temp-normal { color: white !important; } 
+.MMM-TeslaLogger .temp-hot { color: tomato !important; }
